@@ -16,9 +16,9 @@ module.exports = async (req, res) => {
       const title = $(element).find('.title').text().trim();
       const relativeUrl = $(element).find('a.cover-link').attr('href');
       const url = `https://www.rosario3.com${relativeUrl}`;
-      const image = $(element).find('img').attr('src');
+      const image = `https://www.rosario3.com${$(element).find('img').attr('src')}}`;
       const iGuid = `noticia-${i + 1}`;
-      const date = new Date(new Date().getTime() + 10000).toISOString();
+      const date = new Date(new Date().getTime() + i * 1000).toISOString();
 
       if (title && relativeUrl) {
         noticias.push({

@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
       const url = href && href.startsWith('http') ? href : `https://www.infobae.com${href}`;
       const image = $(element).find('img.story-card-img').attr('src');
       const iGuid = `noticia-${i + 1}`;
-      const date = new Date(new Date().getTime() + 10000).toISOString();
+      const date = new Date(new Date().getTime() + i * 1000).toISOString();
 
       // Cuerpo del mensaje que Alexa leerá
       const mainText = `${title}. Puedes leer más en Infobae.com`;
