@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
       const date = new Date(new Date().getTime() + i * 1000).toISOString();
 
       // Cuerpo del mensaje que Alexa leerá
-      const mainText = `${title}. Puedes leer más en Infobae.com`;
+      const mainText = ``;
 
       if (title && href) {
         noticias.push({
