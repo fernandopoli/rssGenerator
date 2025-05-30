@@ -43,6 +43,6 @@ module.exports = async (req, res) => {
     res.status(200).send(feed.xml());
   } catch (error) {
     console.error('Error al generar el feed RSS:', error);
-    res.status(500).send(`Hubo un error al procesar la solicitud. ${error.message}`);
+    res.status(500).send(`Hubo un error al procesar la solicitud. ${error}`);
   }
 };
