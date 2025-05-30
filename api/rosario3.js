@@ -27,12 +27,13 @@ module.exports = async (req, res) => {
       const url = `https://www.rosario3.com${$(element).find('a.cover-link').attr('href')}`;
       const image = $(element).find('img').attr('src');
       const date = new Date();
+      const iGuid = `noticia-${i + 1}`; 
 
       if (title && url) {
         feed.item({
           title,
           url,
-          guid: i, 
+          guid: iGuid,
           date,
           image: image,
         });
