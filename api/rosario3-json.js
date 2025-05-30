@@ -27,6 +27,7 @@ module.exports = async (req, res) => {
           updateDate: date,
           titleText: title,
           redirectionUrl: url,
+          mainText: mainText,
           imageUrl: image,
         });
       }
