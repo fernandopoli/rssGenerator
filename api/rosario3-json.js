@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
         noticias.push({
           uid: iGuid,
           updateDate: date,
-          titleText: title,
+          titleText: title.replace(/“/g, ''),
           redirectionUrl: url,
           mainText: mainText,
           imageUrl: image,
