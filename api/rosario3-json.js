@@ -26,14 +26,14 @@ module.exports = async (req, res) => {
           updateDate: date,
           titleText: title,
           redirectionUrl: url,
-          imageUrl: image
+          imageUrl: image,
         });
       }
     });
 
     // Configurar la respuesta como JSON para Alexa
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(noticias.slice(0, 5)); // Limita a 5 noticias para evitar excesos
+    res.status(200).json(noticias.slice(noticias.length - 10, noticias.length)); // Últimas 10 noticias
   } catch (error) {
     console.error('Error al generar el JSON para Alexa:', error);
     res.status(500).send(`Error al procesar la solicitud: ${error.message}`);
