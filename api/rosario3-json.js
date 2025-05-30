@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
 
     // Extraer cada artículo de la lista de noticias
     $('.entry-box article').each((i, element) => {
-      const title = $(element).find('.title').text().trim();
+      const title = $(element).find('.title').text().trim().replace(/[“”"]/g, "'");
       const relativeUrl = $(element).find('a.cover-link').attr('href');
       const url = `https://www.rosario3.com${relativeUrl}`;
       const image = `https://www.rosario3.com${$(element).find('img').attr('src')}}`;
@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
         noticias.push({
           uid: iGuid,
           updateDate: date,
-          titleText: title.replaceAll(/[“”]/g, '"'),
+          titleText: title,
           redirectionUrl: url,
           mainText: mainText,
           imageUrl: image,

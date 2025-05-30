@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     const noticias = [];
     
     $('.story-card-ctn').each((i, element) => {
-      const title = $(element).find('.story-card-hl').text().trim();
+      const title = $(element).find('.story-card-hl').text().trim().replace(/[“”"]/g, "'");
       const href = $(element).attr('href');
       const url = href && href.startsWith('http') ? href : `https://www.infobae.com${href}`;
       const image = $(element).find('img.story-card-img').attr('src');
@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
         noticias.push({
           uid: iGuid,
           updateDate: date,
-          titleText: title.replaceAll(/[“”]/g, '"'),
+          titleText: title,
           mainText,
           redirectionUrl: url,
           imageUrl: image
