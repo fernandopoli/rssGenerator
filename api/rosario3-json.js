@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
       if (title && relativeUrl) {
         noticias.push({
           uid: iGuid,
-          updateDate: date,
+          // updateDate: date,
           titleText: title,
           redirectionUrl: url,
           imageUrl: image,
