@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
     const $ = cheerio.load(data);
 
     const noticias = [];
-    
+
     $('.story-card-ctn').each((i, element) => {
       const title = $(element).find('.story-card-hl').text().trim();
       const href = $(element).attr('href');
@@ -28,13 +28,13 @@ module.exports = async (req, res) => {
           titleText: title,
           mainText,
           redirectionUrl: url,
-          imageUrl: image
+          imageUrl: image,
         });
       }
     });
 
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(noticias.slice(noticias.length - 10, noticias.length)); // Últimas 10 noticias
+    res.status(200).json(noticias.reverse().slice(0, 10)); // Últimas 10 noticias
   } catch (error) {
     console.error('Error al generar el JSON para Alexa:', error.message);
     res.status(500).send(`Error al procesar la solicitud: ${error.message}`);
