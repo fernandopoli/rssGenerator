@@ -25,10 +25,10 @@ module.exports = async (req, res) => {
         noticias.push({
           uid: iGuid,
           updateDate: date,
-          titleText: title.replaceAll(/“/g, ""), 
+          titleText: title.replaceAll(/[“”]/g, '"'),
           mainText,
           redirectionUrl: url,
-          imageUrl: image,
+          imageUrl: image
         });
       }
     });
