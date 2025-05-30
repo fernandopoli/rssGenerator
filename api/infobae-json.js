@@ -32,9 +32,9 @@ module.exports = async (req, res) => {
         });
       }
     });
-    
+
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(noticias); 
+    res.status(200).json(noticias.slice(0, 10)); // Limitar a las 10 primeras noticias
   } catch (error) {
     console.error('Error al generar el JSON para Alexa:', error.message);
     res.status(500).send(`Error al procesar la solicitud: ${error.message}`);
