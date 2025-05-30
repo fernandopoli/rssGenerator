@@ -17,6 +17,7 @@ module.exports = async (req, res) => {
       const title = $(element).find('.story-card-hl').text().trim();
       const href = $(element).attr('href');
       const url = href && href.startsWith('http') ? href : `https://www.infobae.com${href}`;
+      const image = $(element).find('img.story-card-img').attr('src');
       const iGuid = `noticia-${i + 1}`;
       const date = new Date().toISOString();
 
@@ -30,6 +31,7 @@ module.exports = async (req, res) => {
           titleText: title,
           mainText,
           redirectionUrl: url,
+          imageUrl: image
         });
       }
     });

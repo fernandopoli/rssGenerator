@@ -15,6 +15,8 @@ module.exports = async (req, res) => {
     $('.entry-box article').each((i, element) => {
       const title = $(element).find('.title').text().trim();
       const relativeUrl = $(element).find('a.cover-link').attr('href');
+      const url = `https://www.rosario3.com${relativeUrl}`;
+      const image = $(element).find('img').attr('src');
       const iGuid = `noticia-${i + 1}`;
       const date = new Date().toISOString();
 
@@ -24,6 +26,7 @@ module.exports = async (req, res) => {
           updateDate: date,
           titleText: title,
           redirectionUrl: url,
+          imageUrl: image
         });
       }
     });
