@@ -12,8 +12,6 @@ module.exports = async (req, res) => {
 
     // Extraer artículos (limitamos a 5 para Alexa)
     $('.story-card-ctn').each((i, element) => {
-      if (noticias.length >= 5) return; // Limita a 5 noticias para Alexa
-
       const title = $(element).find('.story-card-hl').text().trim();
       const href = $(element).attr('href');
       const url = href && href.startsWith('http') ? href : `https://www.infobae.com${href}`;
