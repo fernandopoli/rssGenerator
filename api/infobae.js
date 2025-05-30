@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
         feed.item({
           title,
           url,
-          guid: url, // Usamos la URL como identificador único
+          guid: i, /
           date,
           image: image,
         });
