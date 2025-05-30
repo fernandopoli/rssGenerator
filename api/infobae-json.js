@@ -19,14 +19,14 @@ module.exports = async (req, res) => {
       const date = new Date(new Date().getTime() + i * 1000).toISOString();
 
       // Cuerpo del mensaje que Alexa leerá
-      // const mainText = `${title}. Puedes leer más en Infobae.com`;
+      const mainText = `${title}. Puedes leer más en Infobae.com`;
 
       if (title && href) {
         noticias.push({
           uid: iGuid,
           updateDate: date,
           titleText: title,
-          // mainText,
+          mainText,
           redirectionUrl: url,
           imageUrl: image
         });

@@ -19,6 +19,7 @@ module.exports = async (req, res) => {
       const image = `https://www.rosario3.com${$(element).find('img').attr('src')}}`;
       const iGuid = `noticia-${i + 1}`;
       const date = new Date(new Date().getTime() + i * 1000).toISOString();
+      const mainText = `${title}. Puedes leer más en rosario3.com`;
 
       if (title && relativeUrl) {
         noticias.push({
