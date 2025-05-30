@@ -18,12 +18,12 @@ module.exports = async (req, res) => {
       const url = `https://www.rosario3.com${relativeUrl}`;
       const image = $(element).find('img').attr('src');
       const iGuid = `noticia-${i + 1}`;
-      const date = new Date().toISOString();
+      const date = new Date(new Date().getTime() + 10000).toISOString();
 
       if (title && relativeUrl) {
         noticias.push({
           uid: iGuid,
-          // updateDate: date,
+          updateDate: date,
           titleText: title,
           redirectionUrl: url,
           imageUrl: image,
