@@ -26,6 +26,7 @@ module.exports = async (req, res) => {
       const title = $(element).find('.title').text().trim();
       const url = `https://www.rosario3.com${$(element).find('a.cover-link').attr('href')}`;
       const image = $(element).find('img').attr('src');
+      const date = new Date();
 
       if (title && url) {
         feed.item({

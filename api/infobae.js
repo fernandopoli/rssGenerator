@@ -26,6 +26,7 @@ module.exports = async (req, res) => {
       const title = $(element).find('.story-card-hl').text().trim();
       const url = `https://www.infobae.com${$(element).attr('href')}`;
       const image = $(element).find('img.story-card-img').attr('src');
+      const date = new Date();
 
       if (title && url) {
         feed.item({
